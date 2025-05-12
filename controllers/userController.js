@@ -2,7 +2,6 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/User.js";
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  console.log("User from token:", req.user);
   const user = await User.findById(req.user._id);
 
   if (user) {
